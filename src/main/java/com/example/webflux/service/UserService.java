@@ -27,6 +27,9 @@ public class UserService {
     public Mono<Void> deleteById(Long id){
         return userR2dbcRepository.deleteById(id);
     }
+    public Mono<Void> deleteByName(String name){
+        return userR2dbcRepository.deleteByName(name);
+    }
     public Mono<User> update(Long id, String name, String email){
         return userR2dbcRepository.findById(id)
                 .flatMap(u -> {
